@@ -1,0 +1,22 @@
+# Green Hydrogen Siting and Techno-Economic Analysis Pipeline
+# Python >=3.9 required
+# Install: pip install -r requirements.txt
+# Full dependency list generated 2026-08-05 from working environment
+# (reconciled: `pip freeze` output x actual imports across src/, config/,
+# and run_pipeline.py, via AST parsing -- not a substring/grep scan).
+adjustText==1.4.0
+geopandas==1.1.2
+matplotlib==3.10.8
+matplotlib-scalebar==0.9.0
+numpy==2.4.6
+pandas==2.3.3
+pydantic==2.13.4
+pyogrio==0.12.1
+python-dotenv==1.2.1
+PyYAML==6.0.3
+rasterio==1.4.4
+rasterstats==0.21.0
+requests==2.34.2
+SALib>=1.5
+scipy==1.17.0
+shapely==2.1.2

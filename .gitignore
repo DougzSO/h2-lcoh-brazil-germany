@@ -1,0 +1,13 @@
+.env
+config/cdse_credentials.json
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Generated/acquired data and pipeline outputs -- not source, regenerable
+# via run_pipeline.py; ~7GB on disk as of 2026-08-12, unsuitable for git.
+# Hard Rule 7 (root CLAUDE.md): each stage writes disk artifacts before the
+# next stage reads them -- these are exactly those artifacts.
+data/
+outputs/
+.venv/
