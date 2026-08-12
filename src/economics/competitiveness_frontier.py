@@ -205,7 +205,7 @@ def direct_support_range(config, renewable_tech: str) -> dict:
 
     print(
         f"[frontier] {renewable_tech} direct support range: "
-        f"${range_min:.2f} – ${range_max:.2f}/kg (baseline ${baseline:.2f})"
+        f"${range_min:.2f} - ${range_max:.2f}/kg (baseline ${baseline:.2f})"
     )
     print(f"[frontier] {renewable_tech}: {interpretation}")
 
@@ -286,7 +286,7 @@ def summarize_frontier(config, renewable_tech: str, frontier_df: pd.DataFrame) -
         no_frontier_direction = "always cheaper" if gap_high < 0 else "always more expensive"
         print(
             f"[competitiveness_frontier] {renewable_tech}: No frontier found "
-            f"for {renewable_tech} — Brazil {no_frontier_direction} than "
+            f"for {renewable_tech} -- Brazil {no_frontier_direction} than "
             f"Germany across all tested WACC combinations."
         )
     else:
@@ -304,7 +304,7 @@ def summarize_frontier(config, renewable_tech: str, frontier_df: pd.DataFrame) -
             print(
                 f"[competitiveness_frontier] WACC-gap closure: reducing BR WACC "
                 f"from {baseline_br_wacc:.2%} to {parity_br_wacc:.2%} "
-                f"(Δ{gap_pp:.2f} pp) lowers LCOH by ${closure_value:.2f}/kg"
+                f"(delta {gap_pp:.2f} pp) lowers LCOH by ${closure_value:.2f}/kg"
             )
         else:
             # Brazil already CHEAPER than Germany at baseline (gap_low < 0):
@@ -316,14 +316,14 @@ def summarize_frontier(config, renewable_tech: str, frontier_df: pd.DataFrame) -
             print(
                 f"[competitiveness_frontier] WACC headroom: Brazil is already "
                 f"cheaper than Germany at baseline WACC ({baseline_br_wacc:.2%}); "
-                f"BR WACC could rise to {parity_br_wacc:.2%} (Δ{-gap_pp:.2f} pp) "
+                f"BR WACC could rise to {parity_br_wacc:.2%} (delta {-gap_pp:.2f} pp) "
                 f"before losing that edge, at which point LCOH would rise by "
                 f"${-closure_value:.2f}/kg to match Germany's baseline"
             )
         print(
             f"[competitiveness_frontier] Competitiveness frontier for "
-            f"{renewable_tech}: parity when WACC_BR ≤ {parity_br_wacc:.2%} "
-            f"vs WACC_DE ≥ {baseline_de_wacc:.2%} (baseline: BR "
+            f"{renewable_tech}: parity when WACC_BR <= {parity_br_wacc:.2%} "
+            f"vs WACC_DE >= {baseline_de_wacc:.2%} (baseline: BR "
             f"{baseline_br_wacc:.2%}, DE {baseline_de_wacc:.2%})"
         )
 
