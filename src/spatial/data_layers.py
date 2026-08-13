@@ -11,8 +11,9 @@ CRS NOTE:
     grid_utils.reproject_and_resample() reprojects each layer independently
     into config.grid_crs[region.value], so layers share a common CRS/
     resolution but NOT necessarily identical bounds/origin unless derived
-    from the same source extent -- verify in exclusion_mask.py /
-    align_rasters() before pixel-wise arithmetic across layers.
+    from the same source extent -- verify in exclusion_mask.py / topsis.py
+    (both reproject directly onto get_analysis_grid()'s exact transform/
+    shape) before pixel-wise arithmetic across layers.
 
 RESAMPLING METHOD CHOICES (deliberate, not arbitrary):
     - solar irradiance, wind power density: bilinear (continuous fields).

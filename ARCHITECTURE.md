@@ -25,10 +25,13 @@ silently in memory to the next stage. Data acquisition is fully isolated from
 data processing: every external network request lives in the acquisition layer,
 so that a change in a data provider — for example replacing GADM with an
 alternative boundary source — requires no change to any downstream spatial,
-economic, or sensitivity module. No catch-all utility folder exists; shared,
-non-domain-specific logic lives in `spatial/grid_utils.py`, the one location
-where raster alignment logic is genuinely shared across all layers and both
-regions.
+economic, or sensitivity module. No catch-all utility folder exists; shared, non-domain-specific reprojection
+logic (`reproject_and_resample()`, `get_analysis_grid()`) lives in
+`spatial/grid_utils.py`. Pixel alignment across layers within a region is
+achieved by each consuming module (`spatial/exclusion_mask.py`,
+`spatial/topsis.py`) reprojecting directly onto `get_analysis_grid()`'s
+exact transform and shape, rather than by a shared cross-layer alignment
+function.
 
 ---
 

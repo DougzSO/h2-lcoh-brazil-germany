@@ -1,9 +1,9 @@
 """Offline unit tests for src/spatial/grid_utils.py.
 
 get_analysis_grid() tests use explicit `bounds=` (no network / no
-admin_boundaries.get_region_bounds() call). reproject_and_resample() /
-align_rasters() tests build tiny synthetic in-memory-sized GeoTIFF
-fixtures under pytest's tmp_path -- no real acquired data required.
+admin_boundaries.get_region_bounds() call). reproject_and_resample()
+tests build tiny synthetic in-memory-sized GeoTIFF fixtures under
+pytest's tmp_path -- no real acquired data required.
 """
 
 from __future__ import annotations
@@ -20,7 +20,6 @@ from config.config_loader import load_scenario_config
 from src.core.constants import Region, RegionCRS
 from src.spatial.grid_utils import (
     _resolve_resampling,
-    align_rasters,
     get_analysis_grid,
     reproject_and_resample,
 )
@@ -172,23 +171,3 @@ class TestReprojectAndResample:
         assert result.size > 0
         assert np.any(np.isclose(result, 42.0))
         assert not np.all(np.isclose(result, 42.0))
-
-
-class TestAlignRasters:
-    def test_matching_footprints_produce_matching_shapes(self, tmp_path):
-        crs = RegionCRS.projected_crs_for(Region.NORDESTE_BR)
-        raster1 = _write_raster(tmp_path / "r1.tif", (0.0, 0.0, 5_000.0, 5_000.0), crs, fill_value=1.0)
-        raster2 = _write_raster(tmp_path / "r2.tif", (0.0, 0.0, 5_000.0, 5_000.0), crs, fill_value=2.0)
-        target_crs = RegionCRS.projected_crs_for(Region.NORTH_GERMANY)
-
-        array1, array2 = align_rasters(raster1, raster2, target_crs)
-        assert array1.shape == array2.shape
-
-    def test_mismatched_footprints_raise(self, tmp_path):
-        crs = RegionCRS.projected_crs_for(Region.NORDESTE_BR)
-        raster1 = _write_raster(tmp_path / "r1.tif", (0.0, 0.0, 5_000.0, 5_000.0), crs)
-        raster2 = _write_raster(tmp_path / "r2.tif", (0.0, 0.0, 3_000.0, 3_000.0), crs)
-        target_crs = RegionCRS.projected_crs_for(Region.NORTH_GERMANY)
-
-        with pytest.raises(ValueError, match="shape mismatch"):
-            align_rasters(raster1, raster2, target_crs)
