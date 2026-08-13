@@ -54,16 +54,6 @@ class RegionWaccConfig(BaseModel):
     wind: RangeParam
 
 
-class BrazilIncentives(BaseModel):
-    tax_credit_pct: float
-    production_credit_usd_per_kg: float
-
-
-class GermanyIncentives(BaseModel):
-    production_credit_usd_per_kg: float
-    support_period_years: int
-
-
 class RegionConfig(BaseModel):
     name: str
     grid_crs: str
