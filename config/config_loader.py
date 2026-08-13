@@ -183,7 +183,7 @@ class RenewablesConfig(BaseModel):
 # / RenewableTechConfig.power_density_w_per_m2 fields removed above. See
 # scenario_params.yaml's own `technologies:` block comment and
 # docs/memory/09_methodology_assumptions.md /
-# docs/memory/05_capacity_density_assumptions.md for the literature review
+# docs/memory/10_capacity_density_assumptions.md for the literature review
 # and study-specific rationale behind every number.
 # --------------------------------------------------------------------------
 

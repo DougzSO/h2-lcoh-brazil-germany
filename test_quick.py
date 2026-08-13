@@ -109,7 +109,7 @@ assert abs(alk.efficiency_kwh_per_kg - 51.0) < 1e-6, (
 # power_density_w_per_m2 (flat 30 MW/km2 anchor) was migrated to
 # config.technologies.solar_pv.<region>.capacity_density_mw_per_km2, a
 # literature-validated {min, baseline, max} range (43-60, baseline 51.5)
-# -- see docs/memory/05_capacity_density_assumptions.md. The old flat
+# -- see docs/memory/10_capacity_density_assumptions.md. The old flat
 # 30 MW/km2 anchor is intentionally superseded, not a regression: this was
 # a deliberate methodology update, not a YAML/methodology divergence.
 solar_density = config.technologies.solar_pv.brazil.capacity_density_mw_per_km2
