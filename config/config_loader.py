@@ -7,10 +7,10 @@ Pydantic-based loader/validator for scenario_params.yaml (hydrogen LCOH study).
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, Optional, Tuple
 
 import yaml
-from pydantic import BaseModel, Field, field_validator, model_validator
+from pydantic import BaseModel, field_validator, model_validator
 
 
 # --------------------------------------------------------------------------
