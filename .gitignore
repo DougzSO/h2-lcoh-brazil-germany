@@ -11,3 +11,11 @@ __pycache__/
 data/
 outputs/
 .venv/
+
+# Internal methodology/decision documentation and pipeline verification
+# artifacts -- kept local ahead of the first push so the public repo ships
+# code + README.md + ARCHITECTURE.md only, not internal working notes.
+# README.md and ARCHITECTURE.md are at repo root, outside docs/, so no
+# negation pattern is needed here.
+docs/
+SPRINT_LOG.md
