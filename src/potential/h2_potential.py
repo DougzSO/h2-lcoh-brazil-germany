@@ -27,7 +27,7 @@ Each resolves a literature-validated {min, baseline, max} range from
 config.technologies.<renewable_tech>.<region> at the COMBINED scenario
 branch (`scenario` parameter below, default "baseline" -- see
 docs/memory/09_methodology_assumptions.md for capacity factor,
-docs/memory/05_capacity_density_assumptions.md for capacity density).
+docs/memory/10_capacity_density_assumptions.md for capacity density).
 Both are region-specific in this schema. Specific energy consumption is
 read from config.electrolyzer.technologies[electrolyzer_type].efficiency_kwh_per_kg.
 No numeric parameter is hardcoded here.

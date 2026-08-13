@@ -640,8 +640,8 @@ def generate_all_plots(config) -> Dict[str, List[Path]]:
             print(f"[plotting] WARNING: incentive_scenarios figure failed: {exc}")
     else:
         print(f"[plotting] WARNING: skipping incentive_scenarios -- {incentive_csv} not found "
-              f"(incentive_scenarios.py does not currently persist a CSV; see "
-              f"docs/memory/05_economic_model.md)")
+              f"(run economics stage first; incentive_scenarios.py persists this CSV via "
+              f"run_all_incentive_scenarios(), see docs/memory/05_economic_model.md)")
 
     print(
         f"[plotting] generate_all_plots complete in {time.time() - t0:.1f}s: "

@@ -236,6 +236,6 @@ def fetch_wind(region: Region, config) -> Path:
 
 
 def fetch(region: Region, config) -> dict[str, Path]:
-    """Download both solar (GHI) and wind (wind speed) rasters for
+    """Download both solar (GHI) and wind (power density) rasters for
     `region`. Returns {"solar": Path, "wind": Path}."""
     return {"solar": fetch_solar(region, config), "wind": fetch_wind(region, config)}
