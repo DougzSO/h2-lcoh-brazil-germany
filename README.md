@@ -142,9 +142,6 @@ recurring downloads; see
 ## Quickstart
 
 ```bash
-# Smoke-test: import every module under src/ and run functional sanity checks
-python test_quick.py
-
 # Full pytest suite
 pytest tests/
 
