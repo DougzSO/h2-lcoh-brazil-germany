@@ -67,7 +67,6 @@ project-root/
 ├── LICENSE
 ├── requirements.txt
 ├── run_pipeline.py            # CLI orchestrator (no analytical logic)
-├── test_quick.py              # Import + functional smoke test
 ├── docs/
 │   └── memory/                 # Persistent, modular reference documentation
 │       ├── README.md
