@@ -6,16 +6,10 @@ __pycache__/
 
 # Generated/acquired data and pipeline outputs -- not source, regenerable
 # via run_pipeline.py; ~7GB on disk as of 2026-08-12, unsuitable for git.
-# Hard Rule 7 (root CLAUDE.md): each stage writes disk artifacts before the
-# next stage reads them -- these are exactly those artifacts.
 data/
 outputs/
 .venv/
 
 # Internal methodology/decision documentation and pipeline verification
-# artifacts -- kept local ahead of the first push so the public repo ships
-# code + README.md + ARCHITECTURE.md only, not internal working notes.
-# README.md and ARCHITECTURE.md are at repo root, outside docs/, so no
-# negation pattern is needed here.
 docs/
 SPRINT_LOG.md
